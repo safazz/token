@@ -1,0 +1,27 @@
+#!/bin/bash
+
+echo "[?] termux,linux,windows"
+echo -n ">> "; read install
+if [ $install = "termux" ]; then
+echo "installing ..."
+pkg install python2 -y
+pkg install python -y
+pip2 install requests colorama
+pip3 install requests colorama
+echo "installing successfully ..."
+echo "run tool python2 tokenfb.py"
+elif [ $install = "linux" ]; then
+echo "installing ..."
+sudo apt install python3 -y
+sudo apt install python2 -y
+sudo pip2 install requests colorama
+sudo pip3 install requests colorama
+echo "installing successfully ..."
+echo "run tool python2 tokenfb.py"
+elif [ $install = "windows" ]; then
+echo "please install python version 2.7.18 & 3.8.5"
+pip2 install requests colorama
+pip3 install requests colorama
+echo "installing successfully ..."
+echo "run tool python tokenfb.py"
+fi
